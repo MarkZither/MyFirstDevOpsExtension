@@ -1,0 +1,20 @@
+{
+  "name": "myfirstdevopsextension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkZither/MyFirstDevOpsExtension.git"
+  },
+  "keywords": [],
+  "author": "Mark Burton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkZither/MyFirstDevOpsExtension/issues"
+  },
+  "homepage": "https://github.com/MarkZither/MyFirstDevOpsExtension#readme"
+}
