@@ -131,3 +131,4 @@ dist
 
 # output of tfx extension create
 *.vsix
+*.pem
