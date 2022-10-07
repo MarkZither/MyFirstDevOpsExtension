@@ -140,11 +140,11 @@ class CascadingFieldsService {
   }
 }
 
-interface ICascadeValidatorError {
+interface IHubspotValidatorError {
   description: string;
 }
 
-class CascadeValidationService {
+class HubSpotValidationService {
   private cachedFields: WorkItemField[];
 
   public async validateCascades(cascades: CascadeConfiguration): Promise<null | InvalidField[]> {
@@ -179,4 +179,4 @@ class CascadeValidationService {
   }
 }
 
-export { CascadingFieldsService, CascadeValidationService, ICascadeValidatorError };
+export { CascadingFieldsService, HubSpotValidationService, IHubspotValidatorError };

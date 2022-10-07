@@ -1,6 +1,6 @@
 import { ConfigurationStorage, ConfigurationType } from './storage.service';
 import { IManifest } from './types';
-import { CascadeValidationService } from './cascading.service';
+import { HubSpotValidationService } from './hubspot.service';
 
 type Validator = (manifest: IManifest) => Promise<null | IManifestValidationError>;
 
@@ -46,10 +46,10 @@ class ManifestValidationService {
   private validators: Validator[] = [this.checkVersion, this.checkCascadesType, this.checkCascades];
   private requiredProperties = ['version', 'cascades'];
 
-  private cascadeValidator: CascadeValidationService;
+  private hubspotValidator: HubSpotValidationService;
 
   public constructor() {
-    this.cascadeValidator = new CascadeValidationService();
+    this.hubspotValidator = new HubSpotValidationService();
   }
 
   public async validate(manifest: Object): Promise<null | IManifestValidationError[]> {
@@ -118,7 +118,7 @@ class ManifestValidationService {
   }
 
   private async checkCascades(manifest: IManifest): Promise<null | IManifestValidationError> {
-    const validator = this.cascadeValidator;
+    const validator = this.hubspotValidator;
     const errors = await validator.validateCascades(manifest.cascades);
 
     if (errors && errors.length > 0) {
