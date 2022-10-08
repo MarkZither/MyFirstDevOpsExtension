@@ -2,7 +2,7 @@
     "manifestVersion": 1.0,
     "id": "hubspot-source-list",
     "publisher": "markzither",
-    "version": "0.0.1",
+    "version": "0.0.7",
     "name": "HubSpot Sourced List",
     "description": "Fetch data from HubSpot to populate a dropdown list.",
     "public": true,
@@ -39,26 +39,26 @@
     ],
     "contributions": [
       {
-        "id": "cascading-lists-wit-observer",
+        "id": "remotedata-lists-wit-observer",
         "type": "ms.vss-work-web.work-item-notifications",
-        "description": "Observer modifies behavior of a work item form to support cascading picklists.",
+        "description": "Observer modifies behavior of a work item form to support remote data picklists.",
         "targets": [
           "ms.vss-work-web.work-item-form"
         ],
         "properties": {
-          "name": "Cascading Lists Observer",
+          "name": "Remote Data Lists Observer",
           "uri": "/dist/observer.html"
         }
       },
       {
-        "id": "cascading-lists-config-hub",
+        "id": "remotedata-lists-config-hub",
         "type": "ms.vss-web.hub",
-        "description": "Configuration hub for a cascading lists",
+        "description": "Configuration hub for a remote data lists",
         "targets": [
           "ms.vss-web.project-admin-hub-group"
         ],
         "properties": {
-          "name": "Cascading Lists",
+          "name": "Remote Data Lists",
           "order": 1,
           "uri": "/dist/confighub.html"
         }
