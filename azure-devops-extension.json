@@ -2,7 +2,7 @@
     "manifestVersion": 1.0,
     "id": "hubspot-source-list",
     "publisher": "markzither",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "name": "HubSpot Sourced List",
     "description": "Fetch data from HubSpot to populate a dropdown list.",
     "public": true,
