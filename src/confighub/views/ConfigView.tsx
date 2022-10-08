@@ -47,7 +47,13 @@ const ConfigView: React.FC = () => {
     <ConfigViewContainer>
       <Header title='Cascading Lists Config' onSaveClick={onSaveButtonClick} status={status} />
       <EditorContainer>
-        <MonacoEditor
+        <textarea 
+        value={configText}
+        onChange={newValue => {
+          saveDraft(newValue.target.value);
+        }}
+        />
+        {/*<MonacoEditor
           height='800'
           value={configText}
           theme='vs'
@@ -57,7 +63,7 @@ const ConfigView: React.FC = () => {
           onChange={newValue => {
             saveDraft(newValue);
           }}
-        />
+        />*/}
       </EditorContainer>
       <FieldsTable itemProvider={new ArrayItemProvider<FieldTableItem>(fields)} />
     </ConfigViewContainer>
