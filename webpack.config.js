@@ -4,11 +4,14 @@ const webpack = require('webpack');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const APP_DIR = path.resolve(__dirname, './src');
+const MONACO_DIR = path.resolve(__dirname, './node_modules/monaco-editor');
 
 const observerConfig = {
   entry: './src/observer/index.ts',
   mode: 'development',
   output: {
+    chunkLoadingGlobal: 'wpobserverConfigWidget',
     filename: 'observer.js',
     path: path.resolve(__dirname, 'dist'),
   },
@@ -40,6 +43,7 @@ const confighubConfig = {
   entry: './src/confighub/index.tsx',
   mode: 'development',
   output: {
+    chunkLoadingGlobal: 'wpconfighubConfigWidget',
     filename: 'confighub.js',
     path: path.resolve(__dirname, 'dist'),
   },
@@ -60,6 +64,24 @@ const confighubConfig = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      /*{
+        test: /\.css$/,
+        include: APP_DIR,
+        use: [{
+          loader: 'style-loader',
+        }, {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            namedExport: true,
+          },
+        }],
+      }, 
+      {
+        test: /\.css$/,
+        include: MONACO_DIR,
+        use: ['style-loader', 'css-loader'],
+      },*/
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
         loader: 'file-loader',
